@@ -1,5 +1,5 @@
 #QA -
-name: API Nodejs
+name: API Nodejs QA
 
 on:
   push:
