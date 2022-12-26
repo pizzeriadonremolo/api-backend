@@ -1,12 +1,11 @@
-#QA
-name: API Nodejs
+#QA -
+name: API Nodejs QA
 
 on:
   push:
     branches: [ qa ]
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -18,6 +17,5 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
           
-    
     - name: excute script file
       run: ssh -f ubuntu@${{ secrets.SSH_HOST }} /home/ubuntu/donremolo-backend/qa/qa.sh

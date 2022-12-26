@@ -6,9 +6,8 @@ const ipModel = sequelize.define(
     "ipModel",
     {
         id:{
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             primaryKey: true,
-            autoIncrement: true,
             unique:true
             },
         ip: {
