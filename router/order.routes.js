@@ -36,7 +36,7 @@ orderRouter.post("/", async(req, res) => {
   //     ip: clientIp,
   //   })
   // }
-  
+  console.log(req.body)
    const number = idGen();
    const arryOrder = order.map(e => `${e.cartQuantity}-${e.title}`);
    await RecoPedidos(arryOrder);
