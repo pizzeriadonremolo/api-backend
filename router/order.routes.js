@@ -9,6 +9,7 @@ import RecoPedidos from "../controllers/recomendations.js";
 import ipModel from "../schemas/ipuserSchema.js";
 import ProductsSchema from "../schemas/productsSchema.js";
 
+
 dotenv.config({path:'../.env'});
 
 const orderRouter = Router();
@@ -24,19 +25,18 @@ orderRouter.post("/", async(req, res) => {
   } = req.body;
 
 
-  const Clients = await ipModel.findOne({
-    where:{
-      ip:clientIp
-    }
-  })
+  // const Clients = await ipModel.findOne({
+  //   where:{
+  //     ip:clientIp
+  //   }
+  // })
 
-  if(!Clients){
-  await ipModel.create({
-      ip: clientIp,
-    })
-  }
+  // if(!Clients){
+  // await ipModel.create({
+  //     ip: clientIp,
+  //   })
+  // }
   
-      
    const number = idGen();
    const arryOrder = order.map(e => `${e.cartQuantity}-${e.title}`);
    await RecoPedidos(arryOrder);
