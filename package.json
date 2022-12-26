@@ -20,6 +20,8 @@
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.25.5",
-    "sqlite3": "^5.1.2"
+    "sqlite3": "^5.1.2",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5"
   }
 }
