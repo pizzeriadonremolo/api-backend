@@ -33,6 +33,10 @@ const ProductsSchema = sequelize.define(
     cantPedidos:{
       type: DataTypes.INTEGER,
     require:false
+    },
+    cartQuantity:{
+      type: DataTypes.INTEGER,
+    require:false
     }
 },{
  timestamps:true

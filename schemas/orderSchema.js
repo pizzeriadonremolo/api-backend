@@ -1,10 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/db.js";
 
-/*
-aca me falta definir bien el esquema de pedido con Rod
- */
-
 const OrderModel = sequelize.define(
   "OrderModel",
   {
