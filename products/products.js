@@ -48,7 +48,7 @@ const products = [
     id: 6,
     imgUrl:
       "https://res.cloudinary.com/da8x3x8nz/image/upload/v1666903789/Pizzer%C3%ADa%20Don%20Remolo/empanada_jamonyqueso_awmx0y.webp",
-    title: "Empanada de jamón y queso",
+    title: "Empanada de  J/Q",
     description: "Jamón, queso, salsa blanca",
     price: 120,
     category: "Empanadas",

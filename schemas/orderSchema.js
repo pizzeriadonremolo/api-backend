@@ -36,9 +36,12 @@ const OrderModel = sequelize.define(
   },
   pago:{
       type: DataTypes.STRING
+  },
+  name:{
+    type:DataTypes.STRING
   }
 },{
- timestamps:true
+ timestamps:false
 });
 
 export default OrderModel;

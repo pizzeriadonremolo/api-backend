@@ -8,7 +8,7 @@ import dotenv from "dotenv";
 dotenv.config({ path: "../.env" });
 
 export default async function createOrder(req, res) {
-  const { order, address, phone, price, comment, pago } = req.body;
+  const { order, address, phone, price, comment, pago, name } = req.body;
   try {
     const number = idGen();
     const arryOrder = order.map((e) => `${e.cartQuantity}-${e.title}`);
@@ -23,6 +23,7 @@ export default async function createOrder(req, res) {
       comment,
       number,
       pago,
+      name
     });
 
     const url = sendMenssage(newOrder);
