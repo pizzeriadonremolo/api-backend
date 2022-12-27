@@ -26,6 +26,7 @@ const createProducts = async () => {
       price: product.price,
       category: product.category,
       cantPedidos: 0,
+      cartQuantity:0
     });
   });
 };
