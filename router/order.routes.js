@@ -5,6 +5,7 @@ import userJWTDTO from "../helpers/JWT.js";
 import createOrder from "../controllers/createOrder.js";
 import editOrder from "../controllers/editOrder.js";
 import getOrder from "../controllers/getOrder.js";
+import editcart from "../controllers/editCart.js";
 
 dotenv.config({ path: "../.env" });
 
@@ -13,9 +14,11 @@ orderRouter.post("/", createOrder);
 
 orderRouter.put("/order/:id", editOrder);
 
+orderRouter.put("/order/cart/:id", editcart);
+
 orderRouter.get("/order/:id", getOrder);
 
-orderRouter.delete("/order:id", userJWTDTO, async (req, res) => {
+orderRouter.delete("/order/:id", async (req, res) => {
   const number = req.params.id;
 
   if (!number) return res.status(404).res({ error: "Pedido no encontrado." });
