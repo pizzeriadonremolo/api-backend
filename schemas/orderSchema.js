@@ -39,6 +39,9 @@ const OrderModel = sequelize.define(
   },
   name:{
     type:DataTypes.STRING
+  },
+  tkn:{
+    type:DataTypes.TEXT
   }
 },{
  timestamps:false
