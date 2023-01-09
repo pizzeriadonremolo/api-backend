@@ -12,13 +12,13 @@ dotenv.config({ path: "../.env" });
 const orderRouter = Router();
 orderRouter.post("/", createOrder);
 
-orderRouter.put("/order/:id", editOrder);
+orderRouter.put("/order/:id",userJWTDTO, editOrder);
 
-orderRouter.put("/order/cart/:id", editcart);
+orderRouter.put("/order/cart/:id", userJWTDTO, editcart);
 
 orderRouter.get("/order/:id", getOrder);
 
-orderRouter.delete("/order/:id", async (req, res) => {
+orderRouter.delete("/order/:id",userJWTDTO, async (req, res) => {
   const number = req.params.id;
 
   if (!number) return res.status(404).res({ error: "Pedido no encontrado." });

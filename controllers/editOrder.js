@@ -13,9 +13,10 @@ export default async function editOrder(req, res) {
         .status(404)
         .send({ error: "Pedido inexistente. Intente de nuevo." });
 
-    const {name, address, phone, comment } = req.body;
+    const {name, address, phone, comment, pago} = req.body;
     newOrder.phone = phone;
     newOrder.name = name;
+    newOrder.pago = pago;
     newOrder.address = address;
     newOrder.comment = comment;
     await newOrder.save();

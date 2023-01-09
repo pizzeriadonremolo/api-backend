@@ -40,7 +40,7 @@ const OrderModel = sequelize.define(
   name:{
     type:DataTypes.STRING
   },
-  tkn:{
+  jwt:{
     type:DataTypes.TEXT
   }
 },{

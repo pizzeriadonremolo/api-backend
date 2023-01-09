@@ -9,7 +9,7 @@ dotenv.config({ path: "../.env" });
 
 export default async function createOrder(req, res) {
   const { order, address, phone, price, comment, pago, name } = req.body;
-  // try {
+  try {
     const number = idGen();
     const arryOrder = order.map((e) => `${e.cartQuantity}-${e.title}`);
     await RecoPedidos(arryOrder);
@@ -25,7 +25,7 @@ export default async function createOrder(req, res) {
         typ: "JWT",
       })
       .setIssuedAt()
-      .setExpirationTime("15m")
+      .setExpirationTime("5m")
       .sign(encoder.encode(process.env.JWT_PRIVATE_KEY));
 
     const newOrder = await OrderModel.create({
@@ -44,7 +44,7 @@ export default async function createOrder(req, res) {
    
 
     return res.status(200).json({ jwt, url });
-  // } catch (error) {
-  //   return res.status(500).json(error);
-  // }
+  } catch (error) {
+    return res.status(500).json(error.message);
+  }
 }
