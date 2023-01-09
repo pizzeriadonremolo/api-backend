@@ -15,7 +15,11 @@ const userJWTDTO = async (req, res, next) => {
   const jwt = authorization.split(" ")[1];
 
   if (!jwt)
-    return res.status(401).send({ errors: { name: "Usuario no autorizado" } });
+  return res
+  .status(401)
+  .send({
+    error:"Pasado los 15 minutos no es posible cambiar la orden",
+  });
 
   try {
     const encoder = new TextEncoder();

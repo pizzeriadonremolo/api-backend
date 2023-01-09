@@ -25,7 +25,7 @@ export default async function createOrder(req, res) {
         typ: "JWT",
       })
       .setIssuedAt()
-      .setExpirationTime("5m")
+      .setExpirationTime("15m")
       .sign(encoder.encode(process.env.JWT_PRIVATE_KEY));
 
     const newOrder = await OrderModel.create({
