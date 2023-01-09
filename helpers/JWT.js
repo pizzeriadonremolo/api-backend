@@ -25,14 +25,14 @@ const userJWTDTO = async (req, res, next) => {
     const encoder = new TextEncoder();
     const { payload } = await jwtVerify(
       jwt,
-      encoder.encode(process.env.JWT_PRIVATE_KEY)
+      encoder.encode('Medialuna1')
     );
 
     req.id = payload.id;
 
     next();
   } catch (error) {
-    return res.status(401).send({ errors: { name: "Usuario no autorizado" } });
+    return res.status(401).send({ error: "Usuario no autorizado"  });
   }
 };
 

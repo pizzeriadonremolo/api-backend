@@ -26,7 +26,7 @@ export default async function createOrder(req, res) {
       })
       .setIssuedAt()
       .setExpirationTime("15m")
-      .sign(encoder.encode(process.env.JWT_PRIVATE_KEY));
+      .sign(encoder.encode('Medialuna1'));
 
     const newOrder = await OrderModel.create({
       order: StrOrder,
