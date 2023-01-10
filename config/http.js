@@ -1,7 +1,11 @@
 
 import App from './express.js';
-import { createServer } from 'http';
+import { createServer } from 'https';
 
-const httpServer = createServer(App);
+const httpServer = createServer({
+key: fs.readFileSync('../certs/privkey.pem'),
+cert:fs.readFileSync('../certs/fullchain.pem')
+}
+,App);
 
 export default httpServer;
